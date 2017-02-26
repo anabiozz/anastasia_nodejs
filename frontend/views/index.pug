@@ -1,0 +1,149 @@
+doctype html
+html
+  head
+    title site
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Mastering RWD with HTML5 & CSS3
+    link(rel='stylesheet', href='stylesheets/normalize.css')
+    link(rel='stylesheet', href='stylesheets/font-awesome.css')
+    link(rel='stylesheet', href='stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='stylesheets/styles.css')
+  body
+    main.main-container(role='main')
+      aside.side-content(role='complementary')
+        .top-section
+          .profile-image
+            img(src='images/an_photo4.jpg', alt='Anastasia')
+          h3.profile-title Aнастасия Кондратьева
+          p.profile-description Художник
+        // top-section
+        nav.main-navigation
+          ul.navigation
+            li
+              a(href='#top')
+                i.fa.fa-globe
+                | Привет
+            li
+              a(href='#about')
+                i.fa.fa-pencil
+                | Обо мне
+            li
+              a(href='#projects')
+                i.fa.fa-paperclip
+                | Мои работы
+            li
+              a(href='#contact')
+                i.fa.fa-link
+                | Связаться со мной
+        // .main-navigation
+        nav.social-icons
+          ul
+            li
+              a(href='#')
+                i.fa.fa-facebook
+            li
+              a(href='#')
+                i.fa.fa-twitter
+            li
+              a(href='#')
+                i.fa.fa-linkedin
+            li
+              a(href='#')
+                i.fa.fa-google-plus
+            li
+              a(href='#')
+                i.fa.fa-youtube
+            li
+              a(href='#')
+                i.fa.fa-rss
+      article.main-content
+        // banner section
+        section#banner
+          #top.banner-img
+            .welcome-text
+              h2 Хочу валяться в мехах
+        .content-wrapper
+          section.page-section
+            .row
+              #about.col-md-12
+                h4#about_title.widget-title Обо мне
+
+            p= about
+            hr
+          section#projects.page-section
+            .row
+              .col-md-12
+                h4.widget-title Мои Работы
+            .row.projects-holder
+              .col-md-4.col-sm-6
+                .project-item
+                  img(src='images/2.jpg', alt='', height='222')
+                  .project-hover
+                    .inside
+                      h5
+                        a(href='#') Графика
+              .col-md-4.col-sm-6
+                .project-item
+                  img(src='images/3.jpg', alt='', height='222')
+                  .project-hover
+                    .inside
+                      h5
+                        a(href='#') Живопись
+              .col-md-4.col-sm-6
+                .project-item
+                  img(src='images/4.jpg', alt='', height='222')
+                  .project-hover
+                    .inside
+                      h5
+                        a(href='#') Киноэскизы
+              .col-md-4.col-sm-6
+                .project-item
+                  img(src='images/5.jpg', alt='', height='222')
+                  .project-hover
+                    .inside
+                      h5
+                        a(href='#') Раскадровка
+              .col-md-4.col-sm-6
+                .project-item
+                  img(src='images/6.jpg', alt='', height='222')
+                  .project-hover
+                    .inside
+                      h5
+                        a(href='#') Скетчбук
+              .col-md-4.col-sm-6
+                .project-item
+                  img(src='images/7.jpg', alt='', height='222')
+                  .project-hover
+                    .inside
+                      h5
+                        a(href='#') Разное
+            hr
+          section#contact.page-section
+            .row
+              .col-md-12
+                h4.widget-title
+                  | Пожалуйста, свяжитесь со мной по любой
+                  | интересующей информации
+            .row
+              form.contact-form(action='#', method='post')
+                fieldset.col-md-4.col-sm-6
+                  input#your-name(type='text', placeholder='Ваше имя...')
+                fieldset.col-md-4.col-sm-6
+                  input#email(type='email', placeholder='Ваш Email...')
+                fieldset.col-md-4.col-sm-12
+                  input#your-subject(type='text', placeholder='Тема сообщения...')
+                fieldset.col-md-12.col-sm-12
+                  textarea#message(name='message', cols='30', rows='6', placeholder='Оставьте свое сообщение...')
+                fieldset.col-md-12.col-sm-12
+                  input.button.big.default(type='submit', value='Послать Сообщение')
+            // .contact-form
+            hr
+      footer.footer(role='contentinfo')
+        .col-md-12.text-center
+          p.copyright-text Copyright © 2016 Anastasia Kondrateva
+    script(src='js/vendor/jquery-1.10.2.min.js')
+    script(src='js/min/plugins.min.js')
+    script(src='js/min/main.min.js')
+    <!-- // <script src="js/public/dist/main.js"></script> -->
