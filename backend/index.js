@@ -24,6 +24,30 @@ app.get('/', function (req, res) {
   });
 })
 
+app.get('/api/images', function (req, res) {
+  var query = req.query.dir
+  getImages(query, path.resolve(__dirname, "../frontend/images/"+query), function (err, files) {
+    if(err) {
+      console.error(err);
+    }
+    res.send(files);
+  });
+});
+
+//get the list of jpg files in the image dir
+function getImages(query, imageDir, callback) {
+    var fileType = '.jpg',
+        files = [], i;
+    fs.readdir(imageDir, function (err, list) {
+        for(i=0; i<list.length; i++) {
+            if(path.extname(list[i]) === fileType) {
+                files.push("images/"+query+"/"+list[i]); //store the file name into the array files
+            }
+        }
+        callback(err, files);
+    });
+}
+
 app.get('/api/findAbout', mainData.findAbout);
 app.get('/api/saveAbout', mainData.saveAbout);
 

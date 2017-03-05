@@ -38,7 +38,7 @@ hr {
 
 .page-section {
 	padding-top: 40px;
-} 
+}
 
 .content-wrapper {
 	padding: 0 80px;
@@ -74,14 +74,16 @@ h1, h2, h3, h4, h5 {
    color: $light-color;
 }
 
-:-moz-placeholder { 
+:-moz-placeholder {
    color: $light-color;
 }
 
-::-moz-placeholder { 
+::-moz-placeholder {
    color: $light-color;
 }
 
-:-ms-input-placeholder {  
+:-ms-input-placeholder {
    color: $light-color;
 }
+
+p { white-space: pre; }
