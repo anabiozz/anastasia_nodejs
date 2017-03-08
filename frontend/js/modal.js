@@ -30,7 +30,7 @@ document.addEventListener('click', function (e) {
                       width = document.getElementById(this.id).offsetWidth;
                       height = document.getElementById(this.id).offsetHeight;
                       TriggerClick=1;
-                      $(".modal-window img:not(#"+this.id+")").css("visibility", "hidden");
+                      // $(".modal-window img:not(#"+this.id+")").css("visibility", "hidden");
                       $(".modal-window img:not(#"+this.id+")").hide();
                       $(this).animate({width: '800px'}, 500);
                       $(this).animate({height: '100%'}, 500);
@@ -39,7 +39,7 @@ document.addEventListener('click', function (e) {
                        $(this).animate({width: width}, 800);
                        $(this).animate({height: height}, 800);
                        setTimeout(function(){
-                         $(".modal-window img").css('visibility','visible');
+                        //  $(".modal-window img").css('visibility','visible');
                          $(".modal-window img").show();
                        }, 1000);
                   };

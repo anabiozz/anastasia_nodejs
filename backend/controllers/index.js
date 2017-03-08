@@ -1,5 +1,7 @@
-import mainData from './mainData';
+import about from './about';
+import admin from './admin';
 
 export {
-  mainData
+  about,
+  admin
 }

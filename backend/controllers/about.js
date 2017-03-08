@@ -1,7 +1,7 @@
-import data from '../models/MainData';
+import data from '../models/about';
 
 const saveAbout = () => {
-  let mainData = new data({
+  let about = new data({
     name: "about",
     text: `Родилась в 1989 году в городе Горький. Закончила Детскую Школу Искусств №18 в Автозаводском районе.
 Занималась в студии у художника В.Губанова. В 2005 году поступила в Нижегородское Художественное Училище на отделение Живопись.
@@ -34,7 +34,7 @@ const saveAbout = () => {
 - Персональная выставка в ТЦ Крым, Нижний Новгород. 2016г.`
   });
 
-  mainData.save(function(err) {
+  about.save(function(err) {
     if(err) {
       console.error(err);
     }

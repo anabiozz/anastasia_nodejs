@@ -1,10 +1,10 @@
 import mongoose, { Schema } from 'mongoose';
 
-const MainDataSchema = new Schema({
+const aboutSchema = new Schema({
     name: String,
     text: String
 });
 
-let data = mongoose.model('data', MainDataSchema);
+let data = mongoose.model('data', aboutSchema);
 
 export default data;

@@ -5,7 +5,7 @@ import morgan from 'morgan';
 import path from 'path';
 import fs from 'fs';
 import db from 'mongoose';
-import { mainData } from './controllers'
+import { about, admin } from './controllers'
 
 let app = new express()
 const host =  config.server.develop;
@@ -19,10 +19,15 @@ app.set("views", path.resolve(__dirname, "../frontend/views"));
 app.set('view engine', 'pug')
 
 app.get('/', function (req, res) {
-  mainData.findAbout(function (data) {
+  about.findAbout(data => {
     res.render('index', { about: data })
   });
-})
+});
+
+app.get("/api/admin", function (req, res) {
+  res.render('admin')
+  // admin.getAdmin();
+});
 
 app.get('/api/images', function (req, res) {
   var query = req.query.dir
@@ -48,12 +53,11 @@ function getImages(query, imageDir, callback) {
     });
 }
 
-app.get('/api/findAbout', mainData.findAbout);
-app.get('/api/saveAbout', mainData.saveAbout);
-
-app.get("/gallery/:picture", function (req, res) {
-  res.sendFile();
-});
+// app.get('/api/findAbout', mainData.findAbout);
+// app.get('/api/saveAbout', mainData.saveAbout);
+// app.get("/gallery/:picture", function (req, res) {
+//   res.sendFile();
+// });
 
 app.use(function (err, req, res, next) {
   res.status(500);
