@@ -17,11 +17,38 @@ document.addEventListener('click', function (e) {
               success: function (data) {
                 console.log(data);
                 for (var i = 0; i < data.length; i++) {
-                  $('.modal-window').prepend("<img src=" + data[i] + "></img>")
+                  $('.modal-window').prepend('<img id="change'+[i]+'" src=\"' + data[i] + '\"></img>')
                 }
                 document.getElementById(m_ID).classList.add('open');
+
+                var TriggerClick = 0;
+                var width;
+                var height;
+
+                $(".modal-window img").click(function(){
+                  if(TriggerClick==0){
+                      width = document.getElementById(this.id).offsetWidth;
+                      height = document.getElementById(this.id).offsetHeight;
+                      TriggerClick=1;
+                      $(".modal-window img:not(#"+this.id+")").css("visibility", "hidden");
+                      $(".modal-window img:not(#"+this.id+")").hide();
+                      $(this).animate({width: '800px'}, 500);
+                      $(this).animate({height: '100%'}, 500);
+                  }else{
+                       TriggerClick=0;
+                       $(this).animate({width: width}, 800);
+                       $(this).animate({height: height}, 800);
+                       setTimeout(function(){
+                         $(".modal-window img").css('visibility','visible');
+                         $(".modal-window img").show();
+                       }, 1000);
+                  };
+                });
+
               }
             });
+
+
         }
     }
 
