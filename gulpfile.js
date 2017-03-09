@@ -6,7 +6,11 @@ const bs = require('browser-sync').create();
 
 gulp.task('browserSync', function() {
 	bs.init({
-		proxy: "localhost:8085"
+		ui: {
+	       port: 3046
+        },
+		port: 3045,
+		proxy: "localhost:9000"
 	})
 });
 

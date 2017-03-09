@@ -5,7 +5,7 @@ const config = {
   },
   server: {
     develop: '127.0.0.1',
-		port: 8085
+		port: 9000
 	}
 }
 export default config;

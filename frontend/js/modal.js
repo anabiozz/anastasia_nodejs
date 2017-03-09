@@ -26,23 +26,35 @@ document.addEventListener('click', function (e) {
                 var height;
 
                 $(".modal-window img").click(function(){
-                  if(TriggerClick==0){
-                      width = document.getElementById(this.id).offsetWidth;
-                      height = document.getElementById(this.id).offsetHeight;
-                      TriggerClick=1;
-                      // $(".modal-window img:not(#"+this.id+")").css("visibility", "hidden");
-                      $(".modal-window img:not(#"+this.id+")").hide();
-                      $(this).animate({width: '800px'}, 500);
-                      $(this).animate({height: '100%'}, 500);
-                  }else{
-                       TriggerClick=0;
-                       $(this).animate({width: width}, 800);
-                       $(this).animate({height: height}, 800);
-                       setTimeout(function(){
-                        //  $(".modal-window img").css('visibility','visible');
-                         $(".modal-window img").show();
-                       }, 1000);
-                  };
+                    if(TriggerClick==0){
+                        width = document.getElementById(this.id).offsetWidth;
+                        height = document.getElementById(this.id).offsetHeight;
+                        TriggerClick=1;
+                        let item = this;
+                        // $(".modal-window img:not(#"+this.id+")").hide();
+
+                        $(this).animate({height: '100%'}, 500);
+                        $(this).animate({width: '800px'}, 500);
+                        $(this).addClass("resize");
+
+                        setTimeout(function () {
+                             $(".modal-window img:not(#"+item.id+")").css('display','none')
+                        }, 500)
+
+
+
+                    }else{
+                        TriggerClick=0;
+                        $(this).animate({width: width}, 500);
+                        $(this).animate({height: height}, 500);
+                        $(this).removeClass("resize");
+
+                        setTimeout(function () {
+                            $(".modal-window img").css('display','flex');
+                        }, 500)
+
+                        // $(".modal-window img").show();
+                    };
                 });
 
               }

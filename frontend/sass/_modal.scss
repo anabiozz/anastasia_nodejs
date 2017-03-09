@@ -1,12 +1,8 @@
 .modal {
     position: fixed;
     width: 80%;
-    height: auto;
+    height: 90%;
     margin: auto;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
     display: none;
     overflow: auto;
     z-index: 9999;
@@ -22,23 +18,88 @@
 }
 
 .modal-window {
-    position: relative;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: #FFFFFF;
-    width: 100%;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content:space-around;
+    background-color: #000301;
     margin: auto;
     padding: 2.5px;
-    overflow: hidden;
-    padding-top: 0;
+    background-image: url(http://www.transparenttextures.com/patterns/45-degree-fabric-light.png);
+
     img {
-      width: 33.3%;
-      padding: 2.5px;
-      padding-top: 0;
-      height: auto;
+        background-color: #fff;
+        border: 1px solid black;
+        -webkit-flex-grow: 0;
+        -moz-flex-grow: 0;
+        -ms-flex-grow: 0;
+        flex-grow: 0;
+        width: 25%;
+        margin: 10px;
+        padding: 5px;
+        -webkit-box-shadow: 7px 7px 5px -3px rgba(0,0,0,0.75);
+        -moz-box-shadow: 7px 7px 5px -3px rgba(0,0,0,0.75);
+        box-shadow: 7px 7px 5px -3px rgba(0,0,0,0.75);
     }
 }
+
+.modal-one {
+    position: fixed;
+    width: 80%;
+    height: 90%;
+    margin: auto;
+    display: none;
+    overflow: auto;
+    z-index: 9999;
+    button {
+       padding: 15px;
+       font-size: 15px;
+       background: indianred;
+       color: #FFF;
+       border: none;
+       line-height: 15px;
+       text-align: center;
+    }
+}
+
+.modal-window-one {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content:space-around;
+    background-color: #000301;
+    margin: auto;
+    padding: 2.5px;
+    background-image: url(http://www.transparenttextures.com/patterns/45-degree-fabric-light.png);
+
+    img {
+        background-color: #fff;
+        border: 1px solid black;
+        -webkit-flex-grow: 0;
+        -moz-flex-grow: 0;
+        -ms-flex-grow: 0;
+        flex-grow: 0;
+        width: 25%;
+        margin: 10px;
+        padding: 5px;
+        -webkit-box-shadow: 7px 7px 5px -3px rgba(0,0,0,0.75);
+        -moz-box-shadow: 7px 7px 5px -3px rgba(0,0,0,0.75);
+        box-shadow: 7px 7px 5px -3px rgba(0,0,0,0.75);
+    }
+}
+
+.resize {
+    margin: auto;
+}
+
 
 .closeButton {
     position: fixed;

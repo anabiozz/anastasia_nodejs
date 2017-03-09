@@ -53,11 +53,8 @@ function getImages(query, imageDir, callback) {
     });
 }
 
-// app.get('/api/findAbout', mainData.findAbout);
-// app.get('/api/saveAbout', mainData.saveAbout);
-// app.get("/gallery/:picture", function (req, res) {
-//   res.sendFile();
-// });
+app.get('/api/findAbout', about.findAbout);
+app.get('/api/saveAbout', about.saveAbout);
 
 app.use(function (err, req, res, next) {
   res.status(500);
