@@ -4,6 +4,14 @@ document.addEventListener('click', function (e) {
 
     e.preventDefault();
 
+    $(".modal-window").bind('scroll', function() {
+       console.log('Event worked');
+    });
+
+    $(document).on( 'scroll', '.modal-window', function(){
+        console.log('Event Fired');
+    });
+
     if (target.hasAttribute('data-toggle') && target.getAttribute('data-toggle') == 'modal') {
         if (target.hasAttribute('data-target')) {
             var m_ID = target.getAttribute('data-target');
@@ -24,9 +32,23 @@ document.addEventListener('click', function (e) {
                 var TriggerClick = 0;
                 var width;
                 var height;
+                var scroll;
+                $(".modal").scrollTop(0);
 
-                $(".modal-window img").click(function(){
+                $(".modal").bind('scroll', function() {
+                   console.log('Event worked');
+                   if($(".modal-window img").hasClass("resize")) {
+                    
+                   } else {
+                     scroll = $(".modal").scrollTop();
+                   }
+                });
+
+
+                $(".modal-window img").click(function() {
                     if(TriggerClick==0){
+                        $(this).addClass("resize");
+                        $(".modal").scrollTop(0);
                         width = document.getElementById(this.id).offsetWidth;
                         height = document.getElementById(this.id).offsetHeight;
                         TriggerClick=1;
@@ -35,32 +57,20 @@ document.addEventListener('click', function (e) {
                         $(".modal-window img:not(#"+item.id+")").css('display','none')
                         $(this).css({height: '100%'}, 500);
                         $(this).css({width: '800px'}, 500);
-                        $(this).addClass("resize");
-
-                        // setTimeout(function () {
-                        //      $(".modal-window img:not(#"+item.id+")").css('display','none')
-                        // }, 500)
-
-
-
                     }else{
+                        $(this).removeClass("resize");
                         TriggerClick=0;
                         $(this).css({width: width}, 500);
                         $(this).css({height: height}, 500);
-                        $(this).removeClass("resize");
                         $(".modal-window img").css('display','flex');
-                        // setTimeout(function () {
-                        //     $(".modal-window img").css('display','flex');
-                        // }, 500)
-
+                        console.log(scroll);
+                        $(".modal").scrollTop(scroll);
                         // $(".modal-window img").show();
                     };
                 });
 
               }
             });
-
-
         }
     }
 
