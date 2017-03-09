@@ -32,26 +32,26 @@ document.addEventListener('click', function (e) {
                         TriggerClick=1;
                         let item = this;
                         // $(".modal-window img:not(#"+this.id+")").hide();
-
-                        $(this).animate({height: '100%'}, 500);
-                        $(this).animate({width: '800px'}, 500);
+                        $(".modal-window img:not(#"+item.id+")").css('display','none')
+                        $(this).css({height: '100%'}, 500);
+                        $(this).css({width: '800px'}, 500);
                         $(this).addClass("resize");
 
-                        setTimeout(function () {
-                             $(".modal-window img:not(#"+item.id+")").css('display','none')
-                        }, 500)
+                        // setTimeout(function () {
+                        //      $(".modal-window img:not(#"+item.id+")").css('display','none')
+                        // }, 500)
 
 
 
                     }else{
                         TriggerClick=0;
-                        $(this).animate({width: width}, 500);
-                        $(this).animate({height: height}, 500);
+                        $(this).css({width: width}, 500);
+                        $(this).css({height: height}, 500);
                         $(this).removeClass("resize");
-
-                        setTimeout(function () {
-                            $(".modal-window img").css('display','flex');
-                        }, 500)
+                        $(".modal-window img").css('display','flex');
+                        // setTimeout(function () {
+                        //     $(".modal-window img").css('display','flex');
+                        // }, 500)
 
                         // $(".modal-window img").show();
                     };
